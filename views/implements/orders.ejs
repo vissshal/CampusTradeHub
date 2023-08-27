@@ -1,0 +1,116 @@
+<% layout('layouts/boilerplate')%>
+<!-- <div id="cluster-map"></div> -->
+<style>
+  .productImages {
+    height: 300px;
+    width: 400px;
+  }
+</style>
+<div class="container">
+  <br />
+  <h2 style="text-align: center">
+    <b>A C C O U N T &nbsp &nbsp H I S T O R Y</b>
+  </h2>
+  <br />
+  <h2>Items posted for sale</h2>
+  <br />
+  <% for (let implement of implements){%>
+
+  <!-- <%= implement.author %> <%= loggedInUser %>  -->
+  <% if(implement.author.equals(loggedInUser)) {%>
+
+  <div class="card mb-3">
+    <div class="row">
+      <div class="col-md-4">
+        <%if(implement.images.length) {%>
+        <img
+          class="img-fluid productImages"
+          alt=""
+          src="<%=implement.images[0].url%>"
+        />
+        <% }else {%>
+        <img
+          class="img-fluid"
+          alt=""
+          src="https://res.cloudinary.com/douqbebwk/image/upload/v1600103881/AgriRentHub/lz8jjv2gyynjil7lswf4.png"
+        />
+        <% } %>
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title"><%= implement.title %></h5>
+
+          <p class="card-text">
+            <small class="text-muted"><%= implement.Contact %></small>
+          </p>
+          <p class="card-text">
+            <small class="text-muted"><%= implement.webmail %></small>
+          </p>
+          <p class="card-text">
+            <small class="text-muted"><%= implement.location%></small>
+          </p>
+          <a class="btn btn-primary" href="/implements/<%=implement._id%>"
+            >View <%=implement.title%></a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+  <% } %>
+  <!--  -->
+  <% }%>
+
+  <!--  -->
+  <!--  -->
+
+  <br />
+  <h2>Items Purchased</h2>
+  <br />
+  <% for (let implement of implements){%>
+
+  <!-- <%= implement.author %> <%= loggedInUser %>  -->
+  <% if(implement.PurchasedId && implement.PurchasedId.equals(loggedInUser)) {%>
+
+  <div class="card mb-3">
+    <div class="row">
+      <div class="col-md-4">
+        <%if(implement.images.length) {%>
+        <img
+          class="img-fluid productImages"
+          alt=""
+          src="<%=implement.images[0].url%>"
+        />
+        <% }else {%>
+        <img
+          class="img-fluid"
+          alt=""
+          src="https://res.cloudinary.com/douqbebwk/image/upload/v1600103881/AgriRentHub/lz8jjv2gyynjil7lswf4.png"
+        />
+        <% } %>
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title"><%= implement.title %></h5>
+
+          <p class="card-text">
+            <small class="text-muted"><%= implement.Contact %></small>
+          </p>
+          <p class="card-text">
+            <small class="text-muted"><%= implement.webmail %></small>
+          </p>
+          <p class="card-text">
+            <small class="text-muted"><%= implement.location%></small>
+          </p>
+          <a class="btn btn-primary" href="/implements/<%=implement._id%>"
+            >View <%=implement.title%></a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+  <% } %>
+  <!--  -->
+  <% }%>
+</div>
+
+<!-- <script src="/javascripts/clusterMap.js"></script> -->

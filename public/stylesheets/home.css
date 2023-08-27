@@ -1,0 +1,53 @@
+body {
+  height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("https://res.cloudinary.com/dzjjgan1n/image/upload/v1692871200/wallpaperflare.com_wallpaper_rhb2lh.jpg");
+  background-size: cover;
+  background-position: center;
+  text-shadow: 0 0.05rem 0.1rem rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 0 5rem rgba(0, 0, 0, 0.5);
+}
+.px-3 a {
+  width: 130px;
+}
+.px-3 > a:hover {
+  transform: scale(1.2);
+}
+
+.lead {
+  font-size: 35px;
+}
+.highlighter {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: 50px;
+  font-weight: 700;
+  color: white;
+}
+.cover-container {
+  max-width: 60vw;
+}
+
+.nav-link {
+  padding: 0.25rem 0;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.5);
+  margin-left: 3rem;
+  border-bottom: 0.25rem solid transparent;
+}
+
+.nav-link:hover {
+  color: white;
+  transform: scale(1.2);
+  border-bottom-color: green;
+}
+
+.nav-link.active {
+  color: white;
+  border-bottom-color: green;
+}
+
+.btn-secondary,
+.btn-secondary:hover {
+  color: #333;
+  text-shadow: none;
+}
